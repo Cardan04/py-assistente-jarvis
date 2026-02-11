@@ -18,7 +18,7 @@ st.title("🤖 Jarvis – Assistente Pessoal")
 # -----------------------------
 @st.cache_resource
 def load_model():
-    MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
+    MODEL_NAME = "Qwen/Qwen2.5-0.5B-Instruct"
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     model = AutoModelForCausalLM.from_pretrained(
@@ -97,4 +97,5 @@ if user_input:
         {"role": "assistant", "content": resposta}
     )
     with st.chat_message("assistant"):
+
         st.markdown(resposta)
